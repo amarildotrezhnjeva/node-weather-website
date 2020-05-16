@@ -1,9 +1,4 @@
 
-fetch('http://puzzle.mead.io/puzzle').then((response)=>{
-    response.json().then((data)=>{
-        console.log(data)
-    })
-}) 
 //fetch weather 
 //setup a call to fetch qeather fpr boston 
 //get the parse Json response if error print error
@@ -22,7 +17,7 @@ weatherForm.addEventListener('submit',(e)=>{
     const location=search.value
     messageOne.textContent='loading'
 messageTwo.textContent=''
-    fetch('http://localhost:3000/weather?adress=' + location).then((response)=>{
+    fetch('/weather?adress=' + location).then((response)=>{
     response.json().then((data)=>{
         if(data.error){
             messageOne.textContent=data.error
